@@ -12,7 +12,7 @@
   animation: bblFadInOut 1.8s infinite ease-in-out;
 }
 .loader {
-  color: #000;
+  color: #2a2a2a;
   font-size: 7px;
   position: relative;
   text-indent: -9999em;

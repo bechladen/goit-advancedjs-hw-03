@@ -5,11 +5,11 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 let lightbox;
 
-export function initializeLightbox() {
+function initializeLightbox() {
   lightbox = new SimpleLightbox('.gallery a', {});
 }
 
-export function renderImages(images) {
+function renderImages(images) {
   const gallery = document.querySelector('.gallery');
   const markup = images
     .map(
@@ -31,18 +31,27 @@ export function renderImages(images) {
   lightbox.refresh();
 }
 
-export function clearGallery() {
+function clearGallery() {
   document.querySelector('.gallery').innerHTML = '';
 }
 
-export function showLoader() {
+function showLoader() {
   document.querySelector('.loader').classList.remove('hidden');
 }
 
-export function hideLoader() {
+function hideLoader() {
   document.querySelector('.loader').classList.add('hidden');
 }
 
-export function showError(message) {
+function showError(message) {
   iziToast.error({ title: 'Error', message });
 }
+
+export {
+  initializeLightbox,
+  renderImages,
+  clearGallery,
+  showLoader,
+  hideLoader,
+  showError,
+};
