@@ -39,7 +39,7 @@ form.addEventListener('submit', event => {
 
       renderImages(data.hits);
     })
-    .catch(error => {
+    .catch(() => {
       hideLoader();
       showError('An error occurred while fetching images');
     });

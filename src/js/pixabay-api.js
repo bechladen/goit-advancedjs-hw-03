@@ -5,11 +5,11 @@ function fetchImages(query) {
   const url = `${BASE_URL}?key=${API_KEY}&q=${query}&image_type=photo&orientation=horizontal&safesearch=true`;
 
   return fetch(url)
-    .then(response => {
-      if (!response.ok) {
+    .then(res => {
+      if (!res.ok) {
         throw new Error('Failed to fetch images');
       }
-      return response.json();
+      return res.json();
     })
     .catch(error => {
       console.error('Error fetching images:', error);
