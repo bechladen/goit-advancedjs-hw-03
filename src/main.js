@@ -8,41 +8,39 @@ import {
   initializeLightbox,
 } from './js/render-functions.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('.search-form');
-  const input = document.querySelector('.search-input');
+const form = document.querySelector('.search-form');
+const input = document.querySelector('.search-input');
 
-  initializeLightbox();
+initializeLightbox();
 
-  form.addEventListener('submit', event => {
-    event.preventDefault();
+form.addEventListener('submit', event => {
+  event.preventDefault();
 
-    const query = input.value.trim();
-    if (!query) {
-      showError('Please enter a search term');
-      return;
-    }
+  const query = input.value.trim();
+  if (!query) {
+    showError('Please enter a search term');
+    return;
+  }
 
-    clearGallery();
-    showLoader();
-    input.value = '';
+  clearGallery();
+  showLoader();
+  input.value = '';
 
-    fetchImages(query)
-      .then(data => {
-        hideLoader();
+  fetchImages(query)
+    .then(data => {
+      hideLoader();
 
-        if (data.hits.length === 0) {
-          showError(
-            'Sorry, there are no images matching your search query. Please try again!'
-          );
-          return;
-        }
+      if (data.hits.length === 0) {
+        showError(
+          'Sorry, there are no images matching your search query. Please try again!'
+        );
+        return;
+      }
 
-        renderImages(data.hits);
-      })
-      .catch(error => {
-        hideLoader();
-        showError('An error occurred while fetching images');
-      });
-  });
+      renderImages(data.hits);
+    })
+    .catch(error => {
+      hideLoader();
+      showError('An error occurred while fetching images');
+    });
 });
