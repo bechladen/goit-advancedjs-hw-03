@@ -106,11 +106,10 @@ body {
   flex-wrap: wrap;
   padding: 0 24px;
   gap: 24px;
-  justify-content: space-between;
 }
 
 .gallery a {
-  flex: 0 1 calc(33.333% - 16px);
+  flex: 0 1 calc(33.33% - 16px);
   box-sizing: border-box;
   text-align: center;
   color: #2e2f42;
@@ -142,5 +141,4 @@ p.add-p {
   font-weight: 400;
   line-height: 2;
 }
-
 /* #endregion Gallery */
