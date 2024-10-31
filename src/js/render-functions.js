@@ -17,10 +17,22 @@ function renderImages(images) {
     <a href="${image.largeImageURL}">
       <img src="${image.webformatURL}" alt="${image.tags}" title="${image.tags}" />
       <div class="info">
-        <p>Likes: ${image.likes}</p>
-        <p>Views: ${image.views}</p>
-        <p>Comments: ${image.comments}</p>
-        <p>Downloads: ${image.downloads}</p>
+        <div>
+          <p class="main-p">Likes</p>
+          <p class="add-p">${image.likes}</p>
+        </div>
+        <div>
+          <p class="main-p">Views</p>
+          <p class="add-p">${image.views}</p>
+        </div>
+        <div>
+          <p class="main-p">Comments</p>
+          <p class="add-p">${image.comments}</p>
+        </div>
+        <div>
+          <p class="main-p">Downloads</p>
+          <p class="add-p">${image.downloads}</p>
+        </div>
       </div>
     </a>
   `

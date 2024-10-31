@@ -104,12 +104,13 @@ body {
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  padding: 0 24px;
   gap: 24px;
   justify-content: space-between;
 }
 
 .gallery a {
-  flex: 1 1 calc(33.333% - 16px);
+  flex: 0 1 calc(33.333% - 16px);
   box-sizing: border-box;
   text-align: center;
   color: #2e2f42;
@@ -126,11 +127,20 @@ body {
 .gallery .info {
   display: flex;
   justify-content: space-around;
-  padding: 8px;
-  font-size: 14px;
+  padding: 4px 0;
+
+  color: #2e2f42;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+}
+p.main-p {
+  font-weight: 600;
+}
+p.add-p {
+  font-weight: 400;
+  line-height: 2;
 }
 
-.gallery .info p {
-  margin: 4px 0;
-}
 /* #endregion Gallery */
